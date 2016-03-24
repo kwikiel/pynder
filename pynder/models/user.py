@@ -28,7 +28,7 @@ class User(object):
                              'jobs'] if 'title' not in job and 'company' in job])
             self.jobs.extend(["%s" % (job["title"]["name"],) for job in data[
                              'jobs'] if 'title' in job and 'company' not in job])
-        except ValueError:
+        except ValueError, KeyError:
             pass
 
     @property
